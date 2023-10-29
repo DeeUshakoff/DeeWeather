@@ -1,0 +1,13 @@
+.day-details{
+    display: flex;
+    color: black;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 2rem;
+    background: white;
+    margin: 10px;
+
+}
+.day-details-item{
+    display: flex;
+}

@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+{% block title %}DeeWeather{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('/assets/styles/home.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('/assets/styles/hour-forecast.css') }}" rel="stylesheet"/>
+
+{% endblock %}
+
+{% block javascripts %}
+
+{% endblock %}
+
+{% block body %}
+
+    <div id="location">
+
+    </div>
+
+    <div class="forecast-container">
+        <div class="forecast-block-container">
+            <div class="current-temperature-container">
+                <img src="https://yastatic.net/weather/i/icons/funky/dark/{{ weather.fact.icon }}.svg">
+                {{ weather.fact.temp | default('нет информации') }}°C
+            </div>
+            <div class="current-day-details-container">
+                <label>Сейчас</label>
+                <h1>
+                    {{ weather.geo_object.country.name }}, {{ weather.geo_object.locality.name }}
+                </h1>
+                <label>
+                    {{ normalizedNames.condition }}
+
+                </label>
+
+            </div>
+
+        </div>
+        <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+            {% include 'partials/partial.forecast.day.twig' %}
+
+        </div>
+    </div>
+    <div class="hour-forecast-container">
+        Почасовой прогноз
+        <div class="hour-forecast-list">
+
+
+            {% for hour in weather.forecasts[1].hours %}
+                <div class="hour-forecast-item">
+
+                    <h1>
+                        {{ hour.hour }}
+                    </h1>
+                    <div class="current-temperature-container">
+                        <img src="https://yastatic.net/weather/i/icons/funky/dark/{{ hour.icon }}.svg">
+                        {{ hour.temp | default('нет информации') }}°C
+                    </div>
+                    <div class="current-day-details-container">
+
+
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script>
+        getGeoLocationFromSession();
+    </script>
+    {% include 'partials/partial.forecast.days.twig' %}
+{% endblock %}

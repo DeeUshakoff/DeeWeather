@@ -1,0 +1,33 @@
+<div class="day-details">
+    <div class="day-details-item">
+        УФ-индекс: {{ weather.fact.uv_index | default('нет информации') }}
+    </div>
+</div>
+<div class="day-details">
+    <div class="day-details-item">
+        Скорость ветра: {{ weather.fact.wind_speed | default('нет информации')}} м/с
+    </div>
+</div>
+<div class="day-details">
+    <div class="day-details-item">
+        Давление: {{ weather.fact.pressure_mm}} мм
+    </div>
+</div>
+
+<div class="day-details">
+    <div class="day-details-item">
+        Облачность: Пасмурно
+    </div>
+</div>
+
+<div class="day-details">
+    <div class="day-details-item">
+        Направление ветра: {{ normalizedNames.windDirection | default('нет информации') }}
+    </div>
+</div>
+
+<div class="day-details">
+    <div class="day-details-item">
+        Влажность воздуха: {{ weather.fact.humidity | default('нет информации') }}%
+    </div>
+</div>

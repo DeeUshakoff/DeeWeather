@@ -4,13 +4,43 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link href="{{ asset('/assets/styles/global2.css') }}" rel="stylesheet" />
+        <link href="{{ asset('/assets/styles/forecast-partials.css') }}" rel="stylesheet" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <script src="{{ asset('/assets/scripts/jquery-3.7.1.js') }}"></script>
+        <script src="{{ asset('/assets/scripts/geolocation.js') }}"></script>
         {% block stylesheets %}
         {% endblock %}
 
         {% block javascripts %}
         {% endblock %}
     </head>
+    <header>
+        <div>
+            <label>Прогноз на</label>
+            <a href="/">1 день</a>
+            <a href="/?forecastDaysLimit=3">3 дня</a>
+            <a href="/?forecastDaysLimit=7">7 дней</a>
+        </div>
+
+        <div>
+            <button id="setCurrentGeoLocationButton">Текущая геолокация</button>
+            <input id="searchLocationTextBox" type="text" placeholder="ваш город..." value="{{ GeoLocationName.Name | default("") }}">
+            <button id="searchLocationButton">Поиск</button>
+        </div>
+    </header>
     <body>
-        {% block body %}{% endblock %}
+    <div id="suggestPopupContainer" class="suggest-popup-container">
+        Введите название города и нажмите кнопку Поиск
+    </div>
+    {% block body %}{% endblock %}
+
     </body>
+
+
+    <script src="{{ asset('/assets/scripts/global2.js') }}"></script>
+    <script src="{{ asset('/assets/scripts/geolocation-searcher.js') }}"></script>
 </html>

@@ -1,0 +1,73 @@
+html{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+}
+header{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: black;
+    border-radius: 10rem;
+    color: white;
+    justify-content: space-between;
+}
+a{
+    border-radius: 5rem;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    font-size: medium;
+    color: white;
+    background: rgba(255,255,255,0.5);
+    text-decoration: none;
+}
+a:hover{
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.1);
+}
+button{
+    border-radius: 5rem;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    font-size: medium;
+    font-family: 'Open Sans', sans-serif;
+}
+button:hover{
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    -webkit-box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.1);
+}
+
+input{
+    border-radius: 5rem;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    font-size: medium;
+    color: white;
+    background: rgba(255,255,255,0.5);
+    text-decoration: none;
+}
+.suggest-popup-container{
+    visibility: collapse;
+    
+    position: absolute;
+    top: 100px;
+    display: flex;
+    width: 97%;
+    background: #0000009e;
+    backdrop-filter: blur(10px);
+    z-index: 99;
+    padding: 10px;
+    border-radius: 2rem;
+    flex-direction: column;
+    align-items: flex-end;
+    color: white;
+}

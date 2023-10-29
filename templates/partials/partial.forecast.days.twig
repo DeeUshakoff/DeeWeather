@@ -1,0 +1,48 @@
+{% for day in normalizedDays %}
+
+    <div class="forecast-container">
+        <div class="forecast-block-container">
+            <div class="current-temperature-container">
+                <img src="https://yastatic.net/weather/i/icons/funky/dark/ovc_ra_sn.svg">
+                {{ day.parts['day'].temp_avg }}°C
+            </div>
+            <div class="current-day-details-container">
+                <label>{{ day.date }}</label>
+
+                <label>
+                    {{ day.parts['day'].condition }}
+                </label>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+            {% for part in day.parts %}
+                <div>
+                    {{ part.name }}
+
+                    <div class="day-details">
+                        <div class="day-details-item">
+                            УФ-индекс: {{ part.uv_index | default('нет информации') }}
+                        </div>
+                    </div>
+                    <div class="day-details">
+                        <div class="day-details-item">
+                            Скорость ветра: {{ part.wind_speed | default('нет информации') }} м/с
+                        </div>
+                    </div>
+                    <div class="day-details">
+                        <div class="day-details-item">
+                            Средняя температура: {{ part.temp_avg }}°C
+                        </div>
+                    </div>
+
+                    <div class="day-details">
+                        <div class="day-details-item">
+                            Направление ветра: {{ part.wind_dir | default('нет информации') }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endfor %}

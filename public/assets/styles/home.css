@@ -1,0 +1,29 @@
+.forecast-container{
+    display: flex;
+    margin-top: 10px;
+    border-radius: 2rem;
+    background: black;
+    color: white;
+    padding: 10px;
+    align-items: flex-start;
+    overflow: inherit;
+}
+.forecast-block-container{
+    display: flex;
+    border-radius: 2rem;
+    background: white;
+    color: black;
+    padding: 10px;
+}
+.current-temperature-container{
+    display: flex;
+    font-size: xxx-large;
+    flex-direction: column;
+    align-items: stretch;
+}
+.current-day-details-container{
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+}
+

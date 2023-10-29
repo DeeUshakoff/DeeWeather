@@ -1,0 +1,20 @@
+html{
+    background: black;
+}
+.content-container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 99%;
+    height: 90%;
+    justify-content: center;
+    align-items: center;
+}
+.error-label{
+    color: white;
+    font-size: xx-large;
+}
+.error-code{
+    color: white;
+    font-size: large;
+}

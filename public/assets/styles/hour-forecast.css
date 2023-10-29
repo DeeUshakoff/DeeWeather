@@ -1,0 +1,25 @@
+.hour-forecast-container{
+    display: flex;
+    margin-top: 10px;
+    border-radius: 2rem;
+    color: white;
+    background: black;
+    padding: 10px;
+    flex-direction: column;
+}
+.hour-forecast-item{
+    display: flex;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 2rem;
+    color: black;
+    background: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hour-forecast-list{
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+}
