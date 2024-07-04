@@ -42,18 +42,14 @@ class YandexWeatherAPI
 
         $request = new Request('GET', $this->base_uri);
 
-        $this->Response = $this->client->send($request, $options);
+        try{
 
-//        try{
-//        }S
-//        catch (GuzzleException $e) {
-//            return false;
-//        }
-//        if($this->Response->getStatusCode() != 200){
-//            return false;
-//        }
-//       $s_client = HttpClient::createForBaseUri($this->base_uri);
-//       $s_response = $s_client->request('GET', $this->base_uri, $options);
+            $this->Response = $this->client->send($request, $options);
+        }
+        catch (\Exception $ex){
+            return false;
+        }
+
         return true;
     }
 
